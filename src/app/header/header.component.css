@@ -1,0 +1,19 @@
+.navbar-size {
+  font-size: 15px;
+  color: rgba(6, 229, 245, 0.993);
+  ;
+}
+
+.brand {
+  color: White;
+  font-family: 'Franklin Gothic Medium';
+}
+
+.navbar-dark {
+  background-color: black;
+  border-radius: 0%;
+}
+
+.len {
+  height: 50px;
+}
