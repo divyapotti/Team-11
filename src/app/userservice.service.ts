@@ -17,7 +17,6 @@ export class Userservice {
      console.log(user);
      var encrypted = this.EncrDecr.set('123456$#@$^@1ERF', user.password);
      console.log(encrypted)
-     console.log(encrypted)
      user.password = encrypted.split('/').join('')
      console.log(user);
     return this.httpClient.post('RESTAPI_HAPPIFY_452/webapi/myresource/register/',user);
