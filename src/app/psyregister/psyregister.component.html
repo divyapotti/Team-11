@@ -15,18 +15,6 @@
                             Name is required
                         </span>
                     </div>
-                    <!--
-                        <div style="padding-bottom: 15px;" class="form-class" [class.has-error]="email.invalid && email.touched">
-                        <span class="control-label"></span>
-                        <input id="email" required email type="text" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="user.email" #email="ngModel">
-                        <span class="help-block" *ngIf="email.errors?.required && email.touched">
-                            Email is required
-                        </span>
-                        <span class="help-block" *ngIf="email.errors?.email && email.touched">
-                            Email is Invalid
-                        </span>
-                    </div>
-                    -->
                     <div style="padding-bottom: 15px;" class="form-class" [class.has-error]="psyEmail.invalid && psyEmail.touched">
                         <span class="control-label"></span>
                         <input id="psyEmail" required psyEmail type="email" class="form-control" placeholder="Enter Email" name="psyEmail" [(ngModel)]="psy.psyEmail" #psyEmail="ngModel">
