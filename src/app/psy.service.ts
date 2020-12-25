@@ -21,12 +21,12 @@ export class PsyService {
      console.log(encrypted)
      psy.psyPassword = encrypted.split('/').join('')
      console.log(psy);
-     return this.httpClient.post('RESTAPI_HAPPIFY_452/webapi/myresource/register1/',psy);
+     return this.httpClient.post('RestAPI/webapi/myresource/register1/',psy);
    }
    getPsychiatristByPsychiatristPass(loginId : any, password: any) : any{
     var encrypted = this.EncrDecr.set('123456$#@$^@1ERF', password);
     console.log(encrypted.split('/').join(''))
     console.log(encrypted)
-    return this.httpClient.get('RESTAPI_HAPPIFY_452/webapi/myresource/getPsychiatristByPsychiatristPass/'+loginId+'/'+encrypted.split('/').join(''));
+    return this.httpClient.get('RestAPI/webapi/myresource/getPsychiatristByPsychiatristPass/'+loginId+'/'+encrypted.split('/').join(''));
   }
 }

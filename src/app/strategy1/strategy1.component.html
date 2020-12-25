@@ -1,0 +1,35 @@
+<section class="info">
+</section>
+<section class="cards-wrapper">
+    <div class="col-md-3" *ngFor="let task of tasks">
+        <div class=" card-grid-space ">
+            <div class="num ">{{task.taskId}}</div>
+            <a class="card " style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg) ">
+                <div>
+                    <h1>Day {{task.taskId}}</h1>
+                    <p class="card-text ">{{task.taskName}}</p>
+                    <div class="tags ">
+                        <button class="btn btn-lg btn-outline-primary " (click)="open(mymodal) ">Open</button>
+
+
+                        <ng-template class="mymodal-content" #mymodal let-modal>
+                            <div class="modal-header ">
+                                <h4 class="modal-title " id="modal-basic-title ">{{task.taskName}}</h4>
+                                <button type="button " class="close " aria-label="Close " (click)="modal.dismiss( 'Cross click') ">
+                                    <span aria-hidden="true ">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-body ">
+                                {{task.taskDs}}
+                            </div>
+                            <div class="modal-footer ">
+                                <button type="button " class="btn btn-outline-dark " (click)="modal.close( 'Save click') ">Cancel</button>
+                                <button type="button " class="btn btn-outline-dark " (click)="modal.close( 'Save click') ">Done</button>
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

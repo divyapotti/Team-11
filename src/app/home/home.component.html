@@ -1,5 +1,86 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!-- Topic Cards -->
 <link rel="icon" type="image/x-icon" href="favicon.ico">
-<h2>Welcome</h2>
-<h2>  {{user.firstName}}</h2>
+<div>
+    <div id="cards_landscape_wrap-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a routerLink="strategy1">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://www.goalcast.com/wp-content/uploads/2017/09/environment-that-breeds-success.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Focus</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                    <button id="submit-btn" type="submit" name="submit" value="Start Now">Start Now</button>
 
-<h2>{{user.Ad}}</h2>
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a routerLink="strategy2">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://i.kinja-img.com/gawker-media/image/upload/s--b-C5GabB--/c_scale,fl_progressive,q_80,w_800/19113hm4do7kijpg.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Self-Control</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                    <input id="submit-btn" type="submit" name="submit" value="Start Now" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a routerLink="strategy3">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://st2.depositphotos.com/1637056/6002/v/600/depositphotos_60024159-stock-illustration-very-busy-businesswoman.jpg" alt="" />
+                                </div>
+
+                                <div class="text-container">
+                                    <h6>Stress Relief</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                    <input id="submit-btn" type="submit" name="submit" value="Start Now" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <a routerLink="strategy4">
+                        <div class="card-flyer">
+                            <div class="text-box">
+                                <div class="image-box">
+                                    <img src="https://www.callcentrehelper.com/images/stories/2019/09/smiley-block-pushed-forward-760.jpg" alt="" />
+                                </div>
+                                <div class="text-container">
+                                    <h6>Positivity</h6>
+                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                                    <input id="submit-btn" type="submit" name="submit" value="Start Now" />
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2>Welcome {{user.firstName}}</h2>
+
+    <h2>{{user.Ad}}</h2>

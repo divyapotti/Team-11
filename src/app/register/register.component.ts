@@ -10,11 +10,16 @@ import { Userservice } from './../userservice.service';
 })
 export class RegisterComponent implements OnInit {
   
+  /*imageUrl: string;
+  fileToUpload: File = null;
+  reader: FileReader; */
+  product: any;
 
   countries: any;
   
   user: any;
   constructor(private service: Userservice,private toster: ToastrService) {
+    //this.imageUrl = '/assets/img/default-image.png';
     this.user = {userId: '', firstName: '', lastName: '', email: '', mobileNumber: '',
      password: '',conPassword:'',score:'',noOfConsultations:''};
   }
@@ -32,4 +37,23 @@ export class RegisterComponent implements OnInit {
     this.toster.success('For Registering','Thank You',{timeOut:2000});
     
   }
+ /*
+  handleFileInput(file: FileList){
+    this.fileToUpload = file.item(0);
+    this.reader = new FileReader();
+    this.reader.readAsDataURL(this.fileToUpload);
+    this.reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+    };
+  }
+  OnSubmit(imageForm: any) {
+    console.log("In Image Form")
+    console.log(imageForm);
+    this.service.postFile(imageForm, this.fileToUpload).subscribe (
+      data => {
+        console.log('done');
+        this.imageUrl = '/assets/Images/recipe.jpg';
+      }
+    );
+  }*/
 }
