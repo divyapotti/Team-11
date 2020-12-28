@@ -32,7 +32,7 @@ export class Strategy3Component implements OnInit {
     }
   }
   ngOnInit() {
-    this.service.getTasks().subscribe( (result: any) => {console.log(result); this.tasks = result; });
+    this.service.getTasks3().subscribe( (result: any) => {console.log(result); this.tasks = result; });
   }
 
 

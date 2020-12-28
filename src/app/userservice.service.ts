@@ -31,14 +31,34 @@ export class Userservice {
     return this.httpClient.get('RestAPI/webapi/myresource/getUserByEmail/'+Email);
   }
 
+  getTasks1() {
+    console.log("IN Service task 1")
+   
+    return this.httpClient.get('RestAPI/webapi/myresource/getTaskById1/1');
+  }
+  getTasks2() {
+    console.log("IN Service task 2")
+   
+    return this.httpClient.get('RestAPI/webapi/myresource/getTaskById2/2');
+  }
+  getTasks3() {
+    console.log("IN Service task 2")
+   
+    return this.httpClient.get('RestAPI/webapi/myresource/getTaskById3/3');
+  }
+  getTasks4() {
+    console.log("IN Service task 2")
+   
+    return this.httpClient.get('RestAPI/webapi/myresource/getTaskById4/4');
+  }
   getTasks() {
-    console.log("IN Service")
-
+    console.log("IN Service task ")
+   
     return this.httpClient.get('RestAPI/webapi/myresource/getTask');
   }
   
   /*postFile(ImageForm: any, fileToUpload: File) {
-    // const endpoint='RESTAPI/webapi/myresource/';
+    // const endpoint='api/webapi/myresource/';
     const formData: FormData = new FormData();
     formData.append('firstName', ImageForm.firstName);
     formData.append('lastName', ImageForm.lastName);
@@ -48,7 +68,7 @@ export class Userservice {
     formData.append('conPassword', ImageForm.conPassword);
     formData.append('image', fileToUpload, fileToUpload.name);
 
-    return this.httpClient.post('RestAPI/webapi/myresource/registerProduct/', formData);
+    return this.httpClient.post('api/webapi/myresource/registerProduct/', formData);
   }
     */
 
