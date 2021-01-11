@@ -31,6 +31,9 @@ export class Strategy3Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
+  actionMethod(event: any) {
+    event.target.disabled = true;
+  }
   ngOnInit() {
     this.service.getTasks3().subscribe( (result: any) => {console.log(result); this.tasks = result; });
   }

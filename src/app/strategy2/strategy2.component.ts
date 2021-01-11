@@ -32,6 +32,10 @@ export class Strategy2Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
+  actionMethod(event: any) {
+    event.target.disabled = true;
+  }
+
   ngOnInit() {
     this.service.getTasks2().subscribe( (result: any) => {console.log(result); this.tasks = result; });
   }

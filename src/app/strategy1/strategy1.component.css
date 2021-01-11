@@ -20,9 +20,9 @@ a {
 
 .cards-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     margin: 0 auto;
     width: max-content;
 }
@@ -31,8 +31,8 @@ a {
     font-family: 'Heebo';
     --bg-filter-opacity: 0.5;
     background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
-    height: 20em;
-    width: 15em;
+    height: 15em;
+    width: 10em;
     font-size: 1.5em;
     color: white;
     border-radius: 1em;
@@ -48,10 +48,6 @@ a {
     overflow: hidden;
     border: 10px solid #ccc;
     text-decoration: none;
-}
-
-.card:hover {
-    transform: rotate(0);
 }
 
 .card h1 {
@@ -79,11 +75,6 @@ a {
     margin-right: 0.5em;
     line-height: 1.5em;
     transition: all, var(--transition-time);
-}
-
-.card:hover .tags .tag {
-    background: var(--color);
-    color: white;
 }
 
 .card .date {
@@ -120,15 +111,6 @@ a {
     background: white;
     width: 200%;
     height: 200%;
-}
-
-.card:hover {
-    color: var(--color);
-}
-
-.card:hover:before,
-.card:hover:after {
-    transform: scale(1);
 }
 
 .card-grid-space .num {
@@ -202,6 +184,7 @@ body {
     height: 100vh;
 }
 
+h1,
 p {
     text-align: center;
     font-family: Tahoma, Arial, sans-serif;
@@ -295,45 +278,4 @@ p {
     .popup {
         width: 70%;
     }
-}
-
-.mymodal-content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    pointer-events: auto;
-    background-color: rgb(170, 72, 72);
-    background-clip: padding-box;
-    border: 1px solid rgba(0, 0, 0, .2);
-    border-radius: .3rem;
-    outline: 0;
-    margin-top: 1000px;
-}
-
-.mymodal-footer {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-end;
-    padding: .75rem;
-    border-top: 1px rgb(170, 72, 72);
-    border-bottom-right-radius: calc(.3rem - 1px);
-    border-bottom-left-radius: calc(.3rem - 1px);
-}
-
-.mymodal-body {
-    position: relative;
-    flex: 1 1 auto;
-    padding: 1rem;
-}
-
-.mymodal-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding: 1rem 1rem;
-    border-bottom: 1px solid #dee2e6;
-    border-top-left-radius: calc(.3rem - 1px);
-    border-top-right-radius: calc(.3rem - 1px);
 }

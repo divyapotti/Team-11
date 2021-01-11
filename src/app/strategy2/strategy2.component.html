@@ -2,11 +2,11 @@
 </section>
 <section class="cards-wrapper">
     <div class="col-md-3" *ngFor="let task of tasks">
-        <div class=" card-grid-space ">
-            <div class="num ">{{task.taskId}}</div>
-            <a class="card " style="--bg-img: url(https://images1-focus-opensocial.googleusercontent.com/gadgets/proxy?container=focus&resize_w=1500&url=https://codetheweb.blog/assets/img/posts/html-syntax/cover.jpg) ">
+        <div class=" card-grid-space">
+            <div class="num ">{{task.dayNumber}}</div>
+            <a class="card align-items-center" style="--bg-img: url(https://i.pinimg.com/474x/fa/46/6f/fa466f2dcbc038aa8e5f2952fab96be0.jpg) ">
                 <div>
-                    <h1>Day {{task.taskId}}</h1>
+                    <h1>Day {{task.dayNumber}}</h1>
                     <p class="card-text ">{{task.taskName}}</p>
                     <div class="tags ">
                         <button class="btn btn-lg btn-outline-primary " (click)="open(mymodal) ">Open</button>
@@ -23,7 +23,9 @@
                                 {{task.taskDs}}
                             </div>
                             <div class="modal-footer ">
-                                <button type="button " class="btn btn-outline-dark " (click)="modal.close( 'Save click') ">Ok</button>
+                                <button type="button " class="btn btn-outline-dark " (click)="modal.dismiss( 'Cross click')  ">cancel</button>
+                                <!--<button type="button " class="btn btn-outline-dark " (click)="modal.close( 'Save click') ">complete</button>-->
+                                <button type="button" class="btn btn-outline-dark " (click)="actionMethod($event)">Complete</button>
                             </div>
                         </ng-template>
                     </div>
