@@ -8,7 +8,7 @@ import { Userservice } from './../userservice.service';
   styleUrls: ['./strategy3.component.css']
 })
 export class Strategy3Component implements OnInit {
-
+  user :any;
   closeResult: string;
   tasks: any;
   
@@ -31,12 +31,23 @@ export class Strategy3Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
-  actionMethod(event: any) {
-    event.target.disabled = true;
+  actionMethod() {
+    const count = this.user.count3;
+    this.user.count3 = this.user.count3+1;
+    console.log(this.user.count3)
   }
+  loadCurrentUser(){
+    this.user = JSON.parse(localStorage.getItem('User'))
+    console.log("in home ts")
+    console.log(this.user);
+  
+  }
+  
   ngOnInit() {
+    this.loadCurrentUser();
     this.service.getTasks3().subscribe( (result: any) => {console.log(result); this.tasks = result; });
   }
+ 
 
 
 }

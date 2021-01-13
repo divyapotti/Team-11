@@ -8,7 +8,7 @@ import { Userservice } from './../userservice.service';
   styleUrls: ['./strategy1.component.css']
 })
 export class Strategy1Component implements OnInit {
-
+  user: any;
   closeResult: string;
   tasks: any;
   
@@ -31,8 +31,21 @@ export class Strategy1Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
+  actionMethod() {
+    const count = this.user.count1;
+    this.user.count1 = this.user.count1+1;
+    console.log(this.user.count1)
+  }
+  loadCurrentUser(){
+    this.user = JSON.parse(localStorage.getItem('User'))
+    console.log("in home ts")
+    console.log(this.user);
+  
+  }
   ngOnInit() {
+    this.loadCurrentUser();
     this.service.getTasks1().subscribe( (result: any) => {console.log(result.strategyId); this.tasks = result; });
   }
+ 
 
 }

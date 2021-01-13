@@ -2,10 +2,19 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {EncrDecrService} from './encr-decr.service';
 import {retry} from 'rxjs/operators';
+import { ConditionalExpr } from '@angular/compiler';
 @Injectable({
   providedIn: 'root'
 })
 export class Userservice {
+  count2(user: any) {
+    console.log("count in service");
+    const email=user.email;
+    const count2=user.count2;
+    console.log(email)
+    console.log(count2);
+    return this.httpClient.get('RestAPI/webapi/myresource/updateCount2/'+email+'/'+count2);
+   }
   private isUserLogged: any;
   constructor(private httpClient: HttpClient,private EncrDecr: EncrDecrService) {
     this.isUserLogged = false;

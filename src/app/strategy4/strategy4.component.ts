@@ -9,7 +9,7 @@ import { Userservice } from './../userservice.service';
   styleUrls: ['./strategy4.component.css']
 })
 export class Strategy4Component implements OnInit {
-
+  user:any;
   closeResult: string;
   tasks: any;
   
@@ -32,8 +32,21 @@ export class Strategy4Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
-  ngOnInit() {
-    this.service.getTasks4().subscribe( (result: any) => {console.log(result); this.tasks = result; });
+  actionMethod() {
+    const count = this.user.count4;
+    this.user.count4 = this.user.count4+1;
+    console.log(this.user.count4)
   }
 
+  loadCurrentUser(){
+    this.user = JSON.parse(localStorage.getItem('User'))
+    console.log("in home ts")
+    console.log(this.user);
+  
+  }
+  ngOnInit() {
+    this.loadCurrentUser();
+    this.service.getTasks4().subscribe( (result: any) => {console.log(result); this.tasks = result; });
+  }
+  
 }

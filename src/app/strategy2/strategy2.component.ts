@@ -9,9 +9,11 @@ import { Userservice } from './../userservice.service';
   styleUrls: ['./strategy2.component.css']
 })
 export class Strategy2Component implements OnInit {
+  user: any;
 
   closeResult: string;
   tasks: any;
+
   
   constructor(private service: Userservice,private modalService: NgbModal) {}
     
@@ -32,11 +34,21 @@ export class Strategy2Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
-  actionMethod(event: any) {
-    event.target.disabled = true;
+  actionMethod() {
+    const count = this.user.count2;
+    this.user.count2 = this.user.count2+1;
+    console.log(this.user.count2)
+    this.service.count2(this.user).subscribe((result: any) => { console.log(result); } );
+    
   }
-
+  loadCurrentUser(){
+    this.user = JSON.parse(localStorage.getItem('User'))
+    console.log("in home ts")
+    console.log(this.user);
+  
+  }
   ngOnInit() {
+    this.loadCurrentUser();
     this.service.getTasks2().subscribe( (result: any) => {console.log(result); this.tasks = result; });
   }
 
