@@ -1,0 +1,20 @@
+<section class="cards-wrapper">
+    <div class="col-md-3" *ngFor="let p of psy">
+        <div class="card">
+            <div class="card-background ">
+
+                <img src="https://cdn4.iconfinder.com/data/icons/diversity-v2-0-volume-04/64/doctor-white-male-512.png " class="card-image ">
+
+            </div>
+            <div class="card-info ">
+
+                <h1>{{p.psyName}}</h1>
+
+                <p>{{p.psyEdu}}</p>
+                <p>{{p.psyEmail}}</p>
+                <button class="btn btn-primary" routerLink="consultation">Consult</button>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -45,6 +45,10 @@ export class Userservice {
    
     return this.httpClient.get('RestAPI/webapi/myresource/getTaskById1/1');
   }
+  getPsy() {
+    console.log("IN getPsy")
+    return this.httpClient.get('RestAPI/webapi/myresource/getPsy');
+  }
   getTasks2() {
     console.log("IN Service task 2")
    

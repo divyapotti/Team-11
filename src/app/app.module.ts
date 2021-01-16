@@ -19,7 +19,12 @@ import { Strategy1Component } from './strategy1/strategy1.component';
 import { Strategy2Component } from './strategy2/strategy2.component';
 import { Strategy3Component } from './strategy3/strategy3.component';
 import { Strategy4Component } from './strategy4/strategy4.component';
-import { CommonModule } from '@angular/common';  
+import { CommonModule } from '@angular/common';
+import { PsyprofileComponent } from './psyprofile/psyprofile.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+import { ConsultingformComponent } from './consultingform/consultingform.component';  
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+
 
 
 
@@ -27,6 +32,10 @@ import { CommonModule } from '@angular/common';
 const appRoot: Routes = [
                         {path:'', component: HomeComponent},
                         {path:'home', component: HomeComponent},
+                        {path:'psyprofile', component: PsyprofileComponent},
+                        {path:'userprofile', component: UserprofileComponent},
+                        {path:'consultation', component: ConsultingformComponent},
+                        {path:'psyprofile/consultation', component: ConsultingformComponent},
                         {path: 'strategy1', component:Strategy1Component},
                         {path: 'strategy2', component:Strategy2Component},
                         {path: 'strategy3', component:Strategy3Component},
@@ -56,13 +65,16 @@ const appRoot: Routes = [
     Strategy2Component,
     Strategy3Component,
     Strategy4Component,
+    PsyprofileComponent,
+    UserprofileComponent,
+    ConsultingformComponent,
   
     
     
   ],
   imports: [
 
-    CommonModule,BrowserModule, FormsModule,ValidateEqualModule, HttpClientModule, RouterModule.forRoot(appRoot), BrowserAnimationsModule,ToastrModule.forRoot()
+    OwlDateTimeModule,OwlNativeDateTimeModule,CommonModule,BrowserModule, FormsModule,ValidateEqualModule, HttpClientModule, RouterModule.forRoot(appRoot), BrowserAnimationsModule,ToastrModule.forRoot()
   ],
 
   bootstrap: [AppComponent]
