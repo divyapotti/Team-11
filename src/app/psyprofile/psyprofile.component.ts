@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import { PsyService } from '../psy.service';
 import { Userservice } from './../userservice.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Userservice } from './../userservice.service';
 export class PsyprofileComponent implements OnInit {
   psy:any;
   
-  constructor(private service: Userservice,private router: Router) { }
+  constructor(private service: PsyService,private router: Router,){ }
 
   ngOnInit(): void {
     
@@ -19,5 +20,12 @@ export class PsyprofileComponent implements OnInit {
     
   }
   
-
+  gotoconsultation(p:any){
+    this.router.navigate(['consultform']);
+    console.log("In psyprofile after consult pressed")
+    console.log(p)
+    this.psy = p;
+    localStorage.setItem('Psy', JSON.stringify(this.psy));
+    
+  }
 }

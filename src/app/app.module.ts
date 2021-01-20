@@ -34,7 +34,8 @@ const appRoot: Routes = [
                         {path:'home', component: HomeComponent},
                         {path:'psyprofile', component: PsyprofileComponent},
                         {path:'userprofile', component: UserprofileComponent},
-                        {path:'consultation', component: ConsultingformComponent},
+                        //{path:'consultation', component: ConsultingformComponent},
+                        {path:'consultform',component:ConsultingformComponent},
                         {path:'psyprofile/consultation', component: ConsultingformComponent},
                         {path: 'strategy1', component:Strategy1Component},
                         {path: 'strategy2', component:Strategy2Component},
@@ -68,6 +69,7 @@ const appRoot: Routes = [
     PsyprofileComponent,
     UserprofileComponent,
     ConsultingformComponent,
+    
   
     
     

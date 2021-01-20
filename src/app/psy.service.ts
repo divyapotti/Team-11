@@ -29,4 +29,10 @@ export class PsyService {
     console.log(encrypted)
     return this.httpClient.get('RestAPI/webapi/myresource/getPsychiatristByPsychiatristPass/'+loginId+'/'+encrypted.split('/').join(''));
   }
+  getPsy() {
+    console.log("IN getPsy")
+    return this.httpClient.get('RestAPI/webapi/myresource/getPsy');
+  }
+  
+  
 }

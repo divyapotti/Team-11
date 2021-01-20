@@ -1,0 +1,87 @@
+<div class="wrapper">
+    <div class="inner">
+        <img src="/assets/images/img-1.png" alt="" class="image-1">
+
+        <fieldset>
+
+            <div class="form1">
+
+                <form #consultForm="ngForm" (ngSubmit)="consultform()">
+                    <h3 style="color: white;">Consult ></h3>
+                    <div style="padding-bottom: 15px;" class="form-class" [class.has-error]="fullName.invalid && fullName.touched">
+                        <span class="control-label"></span>
+                        <input id="fullName" required class="form-control" placeholder="Enter Name" name="fullName" [(ngModel)]="consult.fullName" #fullName="ngModel">
+                        <span class="help-block" *ngIf="fullName.invalid && fullName.touched">
+                            Name is required
+                        </span>
+                    </div>
+                    <div style="padding-bottom: 15px;" class="form-class" [class.has-error]="email.invalid && email.touched">
+                        <span class="control-label"></span>
+                        <input id="email" required email type="email" class="form-control" placeholder="Enter Email" name="email" [(ngModel)]="consult.email" #email="ngModel">
+                        <span class="help-block" *ngIf="email.errors?.required && email.touched">
+                            Email is required
+                        </span>
+                        <span class="help-block" *ngIf="email.errors?.email && email.touched">
+                            Email is Invalid
+                        </span>
+
+                    </div>
+                    <div style="padding-bottom: 15px;" class="form-class" [class.has-error]="mobileNumber.touched && mobileNumber.invalid">
+                        <span class="control-label"></span>
+                        <input id="mobileNumber" required type="text" placeholder="Enter MobileNumber" class="form-control" name="mobileNumber" [(ngModel)]="consult.mobileNumber" #mobileNumber="ngModel">
+                        <span class="help-block" *ngIf="mobileNumber.touched && mobileNumber.errors?.required">
+                            Mobile Number is required
+                        </span>
+                    </div>
+                    <div style="padding-bottom: 15px;" class="form-group">
+                        <label for="gender"></label>
+                        <select id="gender" type="text" name="gender" [(ngModel)]="consult.gender" #gender="ngModel" class="form-control">
+                            <option   value="MALE">MALE</option>
+                            <option   value="FEMALE">FEMALE</option>
+                        </select>
+
+                    </div>
+                    <div style="padding-bottom: 15px;" class="form-group">
+                        <label for="aon"></label>
+                        <select id="aon" type="text" name="aon" [(ngModel)]="consult.aon" #aon="ngModel" class="form-control">
+                            <option   value="YES">YES</option>
+                            <option   value="NO">NO</option>
+                        </select>
+                    </div>
+
+
+                    <div style="padding-bottom: 15px;" class="form-class">
+                        <label>
+                        <input name="consultationDate" [(ngModel)]="consult.consultationDate" #consultationDate="ngModel" placeholder="Date of consult"  [owlDateTimeTrigger]="dt" [owlDateTime]="dt" >
+                        <owl-date-time [pickerType]="'calendar'" #dt></owl-date-time>
+                    </label>
+
+
+                    </div>
+                    <div>
+                        <label>
+                        <input name="consultationTime" [(ngModel)]="consult.consultationTime"  type = "time" #consultationTime="ngModel" placeholder="Time of consult">
+                        
+                        </label>
+                    </div>
+
+                    <input id="problem" required type="problem" placeholder="Enter problem" class="form-control" name="problem" [(ngModel)]="consult.problem" #problem="ngModel">
+                    <span class="help-block" *ngIf="problem.touched && problem.errors?.required">
+                        problem is required
+                    </span>
+                    <span><button class="btn btn-primary" [disabled]="!consultForm.valid">Consult</button>
+                    </span>
+                </form>
+            </div>
+
+
+
+
+
+            <script src="js/jquery-3.3.1.min.js"></script>
+            <script src="js/main.js"></script>
+
+
+        </fieldset>
+    </div>
+</div>

@@ -13,9 +13,6 @@ export class RegisterComponent implements OnInit {
   /*imageUrl: string;
   fileToUpload: File = null;
   reader: FileReader; */
-  product: any;
-
-  countries: any;
   
   user: any;
   constructor(private service: Userservice,private toster: ToastrService) {

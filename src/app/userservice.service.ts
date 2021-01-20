@@ -7,6 +7,26 @@ import { ConditionalExpr } from '@angular/compiler';
   providedIn: 'root'
 })
 export class Userservice {
+  consultation(consult: any,user:any ,psy:any) {
+    console.log("In service consult")
+     console.log(consult);
+     console.log(user.userId)
+     consult.user = user;
+     consult.psychiatrist = psy;
+     console.log(consult)
+    return this.httpClient.post('RestAPI/webapi/myresource/consultform/',consult);
+  }
+  usermail(user:any) {
+    console.log("called mail");
+    console.log(user.email);
+    return this.httpClient.get('RestAPI/webapi/myresource/usermail/'+user.email);
+  }
+  psymail(psy:any) {
+    console.log("called mail");
+    console.log(psy.psyEmail);
+    return this.httpClient.get('RestAPI/webapi/myresource/psymail/'+psy.psyEmail);
+  }
+  
   count2(user: any) {
     console.log("count in service");
     const email=user.email;
@@ -45,10 +65,6 @@ export class Userservice {
    
     return this.httpClient.get('RestAPI/webapi/myresource/getTaskById1/1');
   }
-  getPsy() {
-    console.log("IN getPsy")
-    return this.httpClient.get('RestAPI/webapi/myresource/getPsy');
-  }
   getTasks2() {
     console.log("IN Service task 2")
    
@@ -81,7 +97,7 @@ export class Userservice {
     formData.append('conPassword', ImageForm.conPassword);
     formData.append('image', fileToUpload, fileToUpload.name);
 
-    return this.httpClient.post('api/webapi/myresource/registerProduct/', formData);
+    return this.httpClient.post('RestAPI/webapi/myresource/registerProduct/', formData);
   }
     */
 
