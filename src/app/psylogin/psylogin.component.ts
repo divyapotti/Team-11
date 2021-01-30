@@ -15,12 +15,15 @@ export class PsyloginComponent implements OnInit {
   @ViewChild('loginRef', {static: true }) loginElement: ElementRef;
   auth2 :any;
   psy: any;
+  
   constructor(private router: Router,private PsyService: PsyService,private toster: ToastrService) {
     this.psy = {email: '', password: ''};
   
   }
   ngOnInit() {
     this.googleInitialize();
+
+   
   }
   googleInitialize() {
     window['googleSDKLoaded'] = () => {
@@ -52,7 +55,7 @@ export class PsyloginComponent implements OnInit {
         
           this.psy =profile ;
             alert('login successful');
-            localStorage.setItem('User', JSON.stringify(this.psy));
+            localStorage.setItem('Psy', JSON.stringify(this.psy));
               
               
               
@@ -73,22 +76,22 @@ export class PsyloginComponent implements OnInit {
           if(this.psy == null){
             //alert('Invalid Credentials..');
             this.toster.success('Try Again','Invalid credentials',{timeOut:2000});
-            this.router.navigate(['register']);
+            this.router.navigate(['psyregister']);
             
           }
           else {
             this.PsyService.setUserLoggedIn();
             //alert('valid Credentials..');
             this.toster.success('Succesfully','Logged In',{timeOut:2000});
-            localStorage.setItem('User', JSON.stringify(this.psy));
-            this.router.navigate(['home']);
+            localStorage.setItem('Psy', JSON.stringify(this.psy));
+            this.router.navigate(['psyhome']);
             
           }
         });
         console.log(loginForm);
       }
       gotoregistration():void{
-        this.router.navigate(['register']);
+        this.router.navigate(['psyregister']);
   
       }
     }

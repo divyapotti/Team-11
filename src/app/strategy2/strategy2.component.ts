@@ -34,12 +34,12 @@ export class Strategy2Component implements OnInit {
       return  `with: ${reason}`;
     }
   }
-  actionMethod() {
+  actionMethod(event:any) {
+    event.target.disabled=true;
     const count = this.user.count2;
     this.user.count2 = this.user.count2+1;
     console.log(this.user.count2)
     this.service.count2(this.user).subscribe((result: any) => { console.log(result); } );
-    
   }
   loadCurrentUser(){
     this.user = JSON.parse(localStorage.getItem('User'))

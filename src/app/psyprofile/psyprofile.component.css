@@ -17,7 +17,7 @@
 }
 
 .card-background {
-    background: linear-gradient(to right, #63adf2, #5a5cee);
+    background: linear-gradient(60deg, #29323c 0%, #0f6ed3 100%);
     height: 120px;
     width: 100%;
     border-top-left-radius: 10px;

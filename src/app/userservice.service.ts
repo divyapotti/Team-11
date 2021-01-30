@@ -7,6 +7,13 @@ import { ConditionalExpr } from '@angular/compiler';
   providedIn: 'root'
 })
 export class Userservice {
+  saveBlog(blog: any,user:any) {
+    blog.user=user;
+    console.log(blog);
+    return this.httpClient.post('RestAPI/webapi/myresource/blogdata/',blog);
+  }
+ public isUserLogged:any;
+private isPsy :any;
   consultation(consult: any,user:any ,psy:any) {
     console.log("In service consult")
      console.log(consult);
@@ -26,6 +33,15 @@ export class Userservice {
     console.log(psy.psyEmail);
     return this.httpClient.get('RestAPI/webapi/myresource/psymail/'+psy.psyEmail);
   }
+  count1(user: any) {
+    console.log("count in service");
+    const email=user.email;
+    const count1=user.count1;
+    console.log(email)
+    console.log(count1);
+    return this.httpClient.get('RestAPI/webapi/myresource/updateCount2/'+email+'/'+count1);
+   }
+ 
   
   count2(user: any) {
     console.log("count in service");
@@ -35,13 +51,12 @@ export class Userservice {
     console.log(count2);
     return this.httpClient.get('RestAPI/webapi/myresource/updateCount2/'+email+'/'+count2);
    }
-  private isUserLogged: any;
+ 
   constructor(private httpClient: HttpClient,private EncrDecr: EncrDecrService) {
     this.isUserLogged = false;
+    this.isPsy = false;
    }
-   setUserLoggedIn(): void { // login success
-    this.isUserLogged = true;
-   }
+  
    register(user: any) {
      console.log("In service")
      console.log(user);
@@ -85,6 +100,11 @@ export class Userservice {
    
     return this.httpClient.get('RestAPI/webapi/myresource/getTask');
   }
+  getBlog() {
+    console.log("IN Service Blog ")
+   
+    return this.httpClient.get('RestAPI/webapi/myresource/getBlog');
+  }
   
   /*postFile(ImageForm: any, fileToUpload: File) {
     // const endpoint='api/webapi/myresource/';
@@ -100,5 +120,20 @@ export class Userservice {
     return this.httpClient.post('RestAPI/webapi/myresource/registerProduct/', formData);
   }
     */
+  
+ 
+  setUserLoggedIn(): void { // login success
+    this.isUserLogged = true;
+   }
+  getUserLogged(): any { // call this in AuthGuard
+    return this.isUserLogged;
+  }
+  onLogout(event: Event) { 
+    console.log("in onLogout")
+    localStorage.removeItem('User');
+    console.log("in onLogout")
+    localStorage.clear();
+    this.isUserLogged=false;
+  }
 
 }

@@ -24,6 +24,9 @@ import { PsyprofileComponent } from './psyprofile/psyprofile.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 import { ConsultingformComponent } from './consultingform/consultingform.component';  
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { PsyhomeComponent } from './psyhome/psyhome.component';
+import {DataTablesModule} from 'angular-datatables';
+import { ForumComponent } from './forum/forum.component';
 
 
 
@@ -32,6 +35,8 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 const appRoot: Routes = [
                         {path:'', component: HomeComponent},
                         {path:'home', component: HomeComponent},
+                        {path:'psyhome', component: PsyhomeComponent},
+                        
                         {path:'psyprofile', component: PsyprofileComponent},
                         {path:'userprofile', component: UserprofileComponent},
                         //{path:'consultation', component: ConsultingformComponent},
@@ -69,6 +74,8 @@ const appRoot: Routes = [
     PsyprofileComponent,
     UserprofileComponent,
     ConsultingformComponent,
+    PsyhomeComponent,
+    ForumComponent,
     
   
     
@@ -76,7 +83,7 @@ const appRoot: Routes = [
   ],
   imports: [
 
-    OwlDateTimeModule,OwlNativeDateTimeModule,CommonModule,BrowserModule, FormsModule,ValidateEqualModule, HttpClientModule, RouterModule.forRoot(appRoot), BrowserAnimationsModule,ToastrModule.forRoot()
+    OwlDateTimeModule,DataTablesModule ,OwlNativeDateTimeModule,CommonModule,BrowserModule, FormsModule,ValidateEqualModule, HttpClientModule, RouterModule.forRoot(appRoot), BrowserAnimationsModule,ToastrModule.forRoot()
   ],
 
   bootstrap: [AppComponent]

@@ -1,6 +1,6 @@
 <section class="info">
 </section>
-<section class="cards-wrapper">
+<section style="margin-top: 100px;" class="cards-wrapper">
     <div class="col-md-3" *ngFor="let task of tasks">
         <div class=" card-grid-space">
 
@@ -23,7 +23,7 @@
                                 {{task.taskDs}}
                             </div>
                             <div class="modal-footer ">
-                                <button type="button" class="btn btn-outline-dark " (click)="actionMethod()">Complete</button>
+                                <button type="button" class="btn btn-outline-dark " (click)="actionMethod($event)">Complete</button>
                             </div>
                         </ng-template>
                     </div>

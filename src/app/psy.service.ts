@@ -7,7 +7,7 @@ import {EncrDecrService} from './encr-decr.service';
 })
 export class PsyService {
 
-  private isPsyLogged: any;
+  public isPsyLogged: any;
   constructor(private httpClient: HttpClient,private EncrDecr: EncrDecrService) {
     this.isPsyLogged = false;
    }
@@ -32,6 +32,41 @@ export class PsyService {
   getPsy() {
     console.log("IN getPsy")
     return this.httpClient.get('RestAPI/webapi/myresource/getPsy');
+  }
+  consultstatusyes(consult: any,psy:any) {
+    console.log("in service yes");
+    const conId = consult.consultationId
+    const  psyId = psy.psyId
+    var status = "Accepted"
+    return this.httpClient.get('RestAPI/webapi/myresource/consultstatus/'+psyId+'/'+conId+'/'+status);
+    
+
+  }
+  consultstatusNo(consult: any,psy:any) {
+    console.log("in service no");
+    const conId = consult.consultationId
+    const  psyId = psy.psyId
+    var status = "Declined"
+    return this.httpClient.get('RestAPI/webapi/myresource/consultstatus/'+psyId+'/'+conId+'/'+status);
+    
+  }
+  getconsult(psy:any) {
+    console.log("In psy service")
+    console.log(psy);
+    const psyId=psy.psyId
+    console.log(psy.psyId)
+    return this.httpClient.get('RestAPI/webapi/myresource/consultlist/'+psyId);
+    
+  }
+  setPsyLoggedIn(): void { // login success
+    this.isPsyLogged = true;
+   }
+   onPsyLogout(event: Event) { 
+    console.log("in onLogout")
+    localStorage.removeItem('User');
+    console.log("in onLogout")
+    localStorage.clear();
+    this.isPsyLogged=false;
   }
   
   

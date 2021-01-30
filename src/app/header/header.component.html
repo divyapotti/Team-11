@@ -1,56 +1,63 @@
-<nav class="navbar navbar-size navbar-expand-lg navbar-dark  sticky-top " style="color: black;">
-    <a class="navbar-size" routerLink="home">Happify</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-
-    <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-
-            <li class="nav-item dropdown navbar-size">
-                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Login
-      </a>
-                <div class="dropdown-menu navbar-size" aria-labelledby="navbarDropdownMenuLink">
-
-                    <a class="dropdown-item" routerLink="login"> User Login</a>
-
-                    <a class="dropdown-item" routerLink="psylogin"> Psy Login</a>
-
+<section id="header">
+    <div class="header container">
+        <div class="nav-bar">
+            <div class="brand">
+                <a routerLink="strategy2">
+                    <h1><span>Happify</span></h1>
+                </a>
+            </div>
+            <div class="nav-list">
+                <div class="hamburger ">
+                    <div class="bar"></div>
                 </div>
+                <ul navbar-nav mr-auto>
 
-            </li>
-            <li class="nav-item dropdown navbar-size">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Register
-      </a>
-                <div class="dropdown-menu navbar-size" aria-labelledby="navbarDropdownMenuLink">
 
-                    <a class="dropdown-item" routerLink="register"> User Register</a>
 
-                    <a class="dropdown-item" routerLink="psyregister"> Psy Register</a>
 
-                </div>
 
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="home">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="userprofile">Profile</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="psyprofile">Consult</a>
-            </li>
-            <li style="margin-left: 1050px;" class="nav-item ">
-                <a class="nav-link " routerLink="login" (click)="onLogout($event)">Logout</a>
-            </li>
-        </ul>
-        <!--
-            <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search">
-          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-        -->
+                    <li>
+                        <a *ngIf="!(service.isUserLogged || service1.isPsyLogged)" class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Login
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+
+                            <a class="dropdown-item" routerLink="login"> User Login</a>
+
+                            <a class="dropdown-item" routerLink="psylogin"> Psy Login</a>
+
+                        </div>
+
+                    </li>
+                    <li>
+                        <a *ngIf="!(service.isUserLogged || service1.isPsyLogged)" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Register
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdownMenuLink">
+
+                            <a class="dropdown-item" routerLink="register"> User Register</a>
+
+                            <a class="dropdown-item" routerLink="psyregister"> Psy Register</a>
+                        </div>
+
+                    </li>
+
+                    <li>
+                        <a routerLink="home">Home</a>
+                    </li>
+                    <li>
+                        <a *ngIf="service.isUserLogged" routerLink="userprofile">Profile</a>
+                    </li>
+                    <li>
+                        <a *ngIf="service.isUserLogged" routerLink="psyprofile">Consult</a>
+                    </li>
+
+                    <li class="nav-left-item">
+                        <a class="nav-link " routerLink="login" (click)="onLogout($event)" *ngIf="service.isUserLogged || service1.isPsyLogged">Logout</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
     </div>
-</nav>
+</section>

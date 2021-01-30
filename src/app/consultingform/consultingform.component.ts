@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Userservice } from './../userservice.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 
 
@@ -14,7 +15,7 @@ export class ConsultingformComponent implements OnInit {
   user:any;
   consult:any;
   psy:any;
-  constructor(private service: Userservice,private toster: ToastrService) {
+  constructor(private router: Router,private service: Userservice,private toster: ToastrService) {
     
   
     this.consult = {consultationId: '', fullName: '', gender: '', dob: '',email:'', mobileNumber: '',
@@ -49,6 +50,7 @@ export class ConsultingformComponent implements OnInit {
     this.toster.success('processed','consulatation',{timeOut:2000});
     this.service.usermail(this.user).subscribe( (result: any) => {console.log(result); });
     this.service.psymail(this.psy).subscribe( (result: any) => {console.log(result); });
+    this.router.navigate(['home']);
 
     }
   

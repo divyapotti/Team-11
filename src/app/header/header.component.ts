@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Userservice } from './../userservice.service';
+import { PsyService } from '../psy.service';
 
 
 @Component({
@@ -10,7 +11,9 @@ import { Userservice } from './../userservice.service';
 })
 export class HeaderComponent implements OnInit {
 user:any;
-  constructor(private router: Router,private service: Userservice) { }
+constructor(private router: Router,public service: Userservice,public service1:PsyService) {
+      
+   }
 
   ngOnInit(): void {
     this.loadCurrentUser();
@@ -19,17 +22,20 @@ user:any;
     this.user = JSON.parse(localStorage.getItem('User'))
     console.log("in user profile ts")
     console.log(this.user);
+    
   
   }
+  
   onLogout(event: Event) { 
     console.log("in onLogout")
     localStorage.removeItem('User');
     console.log("in onLogout")
     localStorage.clear();
-    const isloggedIn=false
-  
+    this.service.isUserLogged=false;
+    this.service1.isPsyLogged=false;
   }
 
+  
   
 
 }

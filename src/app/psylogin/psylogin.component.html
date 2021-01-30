@@ -1,14 +1,12 @@
 <div class="wrapper">
     <div class="inner">
-        <img src="/assets/images/img-1.png" alt="" class="image-1">
-
         <fieldset>
 
             <div class="form1">
 
                 <form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit(loginForm.value)" novalidate>
 
-                    <h3>Login to your Account</h3>
+                    <h3> Psychiatrist Login</h3>
                     <div class="form-holder">
                         <span class="lnr lnr-user"></span>
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input type="text" class="form-control" style="font-size:15px;" name="loginId" ngModel #loginId="ngModel" required maxlength=30 minlength=4 placeholder="login id"><br
